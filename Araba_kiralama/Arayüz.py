@@ -234,6 +234,7 @@ class bilgilendirme2(QWidget):
         loadUi("bilgilendirme.ui",self)
         self.instagram.clicked.connect(lambda: webbrowser.open('https://twitter.com/muratcaneravsar'))
         self.Cikis_buton.clicked.connect(self.cikis)
+        self.Giris_buton.clicked.connect(self.cikis)
         fiyat = fiyat_bilgi[0]
         self.Geri_bildirim.setText("Ekstra ödeyeceğiniz miktar:{}TL".format(fiyat))
         self.Geri_bildirim_2.setText("Ödeme yapmak için yönlendiriliyorsunuz.")
@@ -518,7 +519,7 @@ class araba_onaylama(QWidget):
             widget.addWidget(git)
             widget.setCurrentIndex(widget.currentIndex() + 1)
         else:
-            girilenkod1=girilenkod[-1]
+            girilenkod1=girilenkod
             kod_sorgu = Rastgele_kod.KOD().indirim_kod_sorgu(girilenkod1)
             if kod_sorgu == 2:
                 self.geri_bildirim.setText("Bu kod zaten kullanılmış.")
